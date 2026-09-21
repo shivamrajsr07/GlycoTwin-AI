@@ -1,0 +1,111 @@
+﻿@import 'tailwindcss';
+
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #e7f7f2;
+  background: #061b1a;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(33, 190, 157, 0.16), transparent 28rem),
+    radial-gradient(circle at 86% 18%, rgba(64, 117, 255, 0.12), transparent 28rem),
+    linear-gradient(135deg, #061b1a 0%, #081f2b 52%, #071522 100%);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button,
+select,
+input {
+  font: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+select,
+input {
+  cursor: pointer;
+}
+
+button:focus-visible,
+select:focus-visible,
+input:focus-visible {
+  outline: 2px solid #55e6c1;
+  outline-offset: 3px;
+}
+
+.bio-shell {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.bio-shell::before,
+.bio-shell::after {
+  position: fixed;
+  z-index: -1;
+  width: 32rem;
+  height: 32rem;
+  border: 1px solid rgba(85, 230, 193, 0.1);
+  border-radius: 44% 56% 62% 38% / 42% 42% 58% 58%;
+  content: '';
+  pointer-events: none;
+  transform: rotate(28deg);
+}
+
+.bio-shell::before {
+  top: -13rem;
+  right: -10rem;
+  box-shadow: 0 0 0 3rem rgba(85, 230, 193, 0.025), 0 0 0 6rem rgba(85, 230, 193, 0.02);
+}
+
+.bio-shell::after {
+  bottom: -17rem;
+  left: -12rem;
+  border-color: rgba(94, 143, 255, 0.11);
+  transform: rotate(-24deg);
+}
+
+.bio-card {
+  border: 1px solid rgba(137, 220, 206, 0.16);
+  background: linear-gradient(145deg, rgba(13, 44, 47, 0.88), rgba(7, 29, 38, 0.9));
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.2), inset 0 1px rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+}
+
+/* Keep legacy light panels readable against the darker command-center shell. */
+.bg-white {
+  color: #172b36;
+}
+
+.bg-slate-50 {
+  color: #29404a;
+}
+
+.bg-slate-50 .text-slate-500,
+.bg-white .text-slate-500 {
+  color: #59717b;
+}
+
+input[type='range'] {
+  accent-color: #159e8c;
+}
