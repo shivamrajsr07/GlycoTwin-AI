@@ -1,365 +1,465 @@
 <div align="center">
 
-# 🧬 GlycoTwin AI
-
-### Explainable Digital Twin for Proactive Glucose Spike Risk Forecasting
-
-<p>
-  <strong>Transforming EHR + wearable data into an intelligent, continuously evolving patient Digital Twin.</strong>
-</p>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0B1220&height=210&section=header&text=GlycoTwin%20AI&fontSize=58&fontColor=FFFFFF&animation=fadeIn&fontAlignY=36&desc=An%20Explainable%20Healthcare%20Digital%20Twin%20for%20Proactive%20Glucose%20Risk%20Forecasting&descAlignY=61&descSize=17" width="100%"/>
 
 <br/>
 
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/shivamrajsr07/GlycoTwin-AI)
-[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![React](https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=500&size=19&pause=1800&color=0EA5E9&center=true&vCenter=true&width=850&lines=EHR+%2B+Wearables+%E2%86%92+Digital+Twin+%E2%86%92+Prediction+%E2%86%92+Explanation;From+Reactive+Monitoring+to+Predictive+Patient+Intelligence;Built+for+the+Happiest+Health+Digital+Twin+Challenge+2026" />
 
-<br/>
+<br/><br/>
 
-### 🏥 Digital Twin Challenge 2026
-**Happiest Health × Unstop**
+<a href="https://github.com/shivamrajsr07/GlycoTwin-AI">
+<img src="https://img.shields.io/badge/Source%20Code-GitHub-111827?style=for-the-badge&logo=github"/>
+</a>
+<img src="https://img.shields.io/badge/Stage-Prototype%20%2F%20PoC-0EA5E9?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Healthcare-AI-0F766E?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/License-MIT-16A34A?style=for-the-badge"/>
+
+<br/><br/>
+
+**Digital Twin Challenge 2026 · Happiest Health × Unstop**
+
+**Team Hacknetic Force · CMR Institute of Technology, Bengaluru**
 
 </div>
 
 ---
 
-# 🚀 Overview
+# 01 — Executive Summary
 
-**GlycoTwin AI** is an explainable healthcare Digital Twin prototype designed to model a patient's evolving metabolic state by combining **static EHR information** with **dynamic wearable and IoT signals**.
+**GlycoTwin AI** is a healthcare Digital Twin proof-of-concept that combines **static/historical patient information** with **dynamic wearable and IoT time-series data** to maintain a continuously updated representation of a patient's metabolic state.
 
-The system creates a virtual representation of a patient's current physiological state and uses machine learning to forecast a potential **glucose spike approximately two hours ahead**.
+The prototype focuses on one specific and measurable healthcare outcome:
 
-Instead of simply displaying historical health data, GlycoTwin AI follows a continuous intelligence loop:
+> **Forecasting a potential glucose spike approximately two hours ahead.**
+
+The system is designed around a complete intelligence loop:
 
 ```text
-Patient Data
+┌──────────────────┐
+│  Static EHR Data │
+│ Demographics     │
+│ Labs             │
+│ History          │
+└────────┬─────────┘
+         │
+         │
+         ▼
+┌────────────────────────┐       ┌──────────────────────────┐
+│ Dynamic Wearable Data  │       │ Meal / Activity Signals  │
+│ Glucose • HR • HRV     │       │ Carbohydrates • Activity │
+│ Sleep • Steps          │       │                          │
+└────────────┬───────────┘       └────────────┬─────────────┘
+             │                                │
+             └───────────────┬────────────────┘
+                             ▼
+                  ┌──────────────────────┐
+                  │    DATA FUSION        │
+                  └──────────┬───────────┘
+                             ▼
+                  ┌──────────────────────┐
+                  │ FEATURE ENGINEERING   │
+                  └──────────┬───────────┘
+                             ▼
+                  ┌──────────────────────┐
+                  │   PATIENT DIGITAL     │
+                  │        TWIN           │
+                  └──────────┬───────────┘
+                             │
+              ┌──────────────┼──────────────┐
+              ▼              ▼              ▼
+       ┌────────────┐ ┌────────────┐ ┌────────────┐
+       │ Prediction │ │ Explain AI │ │ What-If    │
+       │   Engine   │ │   / SHAP   │ │ Simulation │
+       └─────┬──────┘ └─────┬──────┘ └─────┬──────┘
+             │              │              │
+             └──────────────┼──────────────┘
+                            ▼
+                 ┌─────────────────────┐
+                 │ Healthcare Dashboard│
+                 │ State • Forecast    │
+                 │ Drivers • Scenarios │
+                 └─────────────────────┘
+02 — The Healthcare Problem
+
+Healthcare data is increasingly generated from multiple sources:
+
+Electronic Health Records
+Laboratory measurements
+Continuous glucose monitoring
+Smartwatches and wearable sensors
+Sleep trackers
+Activity trackers
+Patient-reported information
+Meal and lifestyle data
+
+The challenge is not simply collecting these signals.
+
+The challenge is connecting them into a continuously updated patient state that can support predictive analysis.
+
+Conventional workflow
+Measurement
      ↓
+Storage
+     ↓
+Periodic Review
+     ↓
+Reactive Interpretation
+GlycoTwin AI approach
+Continuous Data
+      ↓
 Data Fusion
-     ↓
-Feature Engineering
-     ↓
-Digital Twin State
-     ↓
-Prediction
-     ↓
-Explainable AI
-     ↓
-What-If Simulation
-     ↓
-Updated Patient Insight
-🎯 Problem Statement
-
-Patients with chronic metabolic conditions generate large amounts of health data from clinical records, wearable devices, activity trackers, sleep monitors, and glucose sensors.
-
-However, these signals are often viewed independently.
-
-Traditional workflow:
-
-Periodic Measurements
-        ↓
-Clinical Review
-        ↓
-Reactive Decision
-
-GlycoTwin AI explores a predictive approach:
-
-Continuous Signals
-        ↓
-Patient Digital Twin
-        ↓
+      ↓
+Digital Twin
+      ↓
 Predictive Model
-        ↓
+      ↓
 Explainable Forecast
-        ↓
-Scenario Simulation
+      ↓
+What-If Simulation
 
-The prototype focuses on forecasting a localized adverse health event:
+This prototype therefore treats the Digital Twin as the central patient-state layer, rather than as another visualization.
 
-Potential glucose spike approximately two hours ahead.
+03 — Healthcare Use Case
+Type 2 Diabetes — Near-Term Glucose Risk Forecasting
 
-💡 Core Innovation
+For the proof-of-concept, GlycoTwin AI focuses on a localized outcome:
 
-GlycoTwin AI combines two types of patient information.
+Potential glucose spike approximately two hours ahead
 
-🧬 Static / Historical Data
-Demographics
-BMI
-HbA1c
-Fasting glucose
-Blood pressure
-Cholesterol
-Diabetes duration
-Family history
-Medication information
-⌚ Dynamic / Time-Series Data
+The model receives information representing:
+
+Data category	Signals
+Patient profile	Age, sex, BMI
+Clinical history	HbA1c, fasting glucose, diabetes duration
+Clinical measurements	Blood pressure, cholesterol
+Wearable signals	Heart rate, HRV, steps
+Recovery	Sleep duration, sleep quality
+Lifestyle	Activity level, calories
+Meal context	Carbohydrate intake
+Temporal context	Time of day, historical trends
+
+The goal is not to build a whole-body Digital Twin within a short prototype cycle.
+
+Instead, GlycoTwin AI deliberately focuses the Digital Twin on one specific physiological outcome, consistent with the challenge's requirement for a localized health event.
+
+04 — Why a Digital Twin?
+
+A conventional ML prediction can answer:
+
+"What is likely to happen?"
+
+A Digital Twin architecture can additionally maintain:
+
+"What is the patient's current modeled state?"
+
+and enable:
+
+"How does the modeled state change under a hypothetical scenario?"
+
+That creates three connected capabilities:
+
+                    DIGITAL TWIN
+                         │
+          ┌──────────────┼──────────────┐
+          │              │              │
+          ▼              ▼              ▼
+       OBSERVE        PREDICT        SIMULATE
+          │              │              │
+      Current State   Future State   What-If State
+
+This is the core architectural principle of GlycoTwin AI.
+
+05 — What We Built
+5.1 Patient Digital Twin
+
+The Digital Twin combines:
+
+Static patient attributes
+Historical clinical context
+Current sensor state
+Recent time-series history
+Temporal features
+Model predictions
+
+The resulting state becomes the common input to prediction, explainability, and simulation.
+
+5.2 Dynamic Wearable Stream
+
+The prototype models a continuous stream containing:
+
+Timestamp
 Glucose
-Heart rate
+Heart Rate
 HRV
 Steps
-Sleep duration
-Sleep quality
-Activity level
+Sleep Duration
+Sleep Quality
+Activity Level
 Calories
-Meal carbohydrates
+Meal Carbohydrates
 
-These signals are fused to maintain a continuously updated Digital Twin state.
+This enables the system to represent the patient as a changing time-series rather than as a static record.
 
-🧠 System Architecture
-🔥 Key Features
-Feature	Description
-🧬 Digital Patient Twin	Continuously represents the patient's current physiological state
-📈 Glucose Forecasting	Predicts potential glucose spikes approximately two hours ahead
-⌚ Wearable Intelligence	Processes simulated wearable and IoT time-series signals
-🔍 Explainable AI	Identifies important factors contributing to model predictions
-🧪 What-If Simulation	Tests hypothetical changes to meals, activity, and sleep
-🩺 Doctor Dashboard	Provides patient state, trends, forecasts, explanations, and scenarios
-📊 Temporal Analytics	Uses historical, lagged, rolling, and time-based features
-🔐 Privacy-First Prototype	Designed around synthetic/anonymized/open data
-🧬 Digital Twin
+5.3 Temporal Feature Engineering
 
-The Digital Twin acts as the central intelligence layer.
+The prediction pipeline can derive:
 
-                  PATIENT
-                     │
-        ┌────────────┴────────────┐
-        │                         │
-        ▼                         ▼
-   STATIC DATA              DYNAMIC DATA
-        │                         │
-        ▼                         ▼
-      EHR                    WEARABLES
-      Labs                    Glucose
-      BMI                     HR / HRV
-      History                 Sleep
-      Medication             Activity
-                              Meals
-        │                         │
-        └────────────┬────────────┘
-                     ▼
-              DATA FUSION
-                     │
-                     ▼
-             FEATURE ENGINE
-                     │
-                     ▼
-            🧬 DIGITAL TWIN
-                     │
-        ┌────────────┼────────────┐
-        ▼            ▼            ▼
-   Prediction   Explanation   Simulation
-        │            │            │
-        └────────────┼────────────┘
-                     ▼
-             DOCTOR DASHBOARD
-🤖 Machine Learning Pipeline
-Feature Engineering
-
-The model pipeline can incorporate:
-
-Current glucose
-Previous glucose values
+Lagged glucose values
 Rolling glucose statistics
+Recent activity trends
 Heart-rate trends
 HRV changes
-Recent physical activity
-Sleep duration
-Sleep quality
-Meal carbohydrates
-Time of day
-Activity level
-Patient-specific characteristics
-🔮 Prediction Engine
+Sleep patterns
+Meal carbohydrate context
+Time-of-day features
+Patient-specific features
 
-The prediction engine evaluates the current Digital Twin state and generates a forecast.
+The objective is to preserve both:
 
-Example:
+patient context + temporal context
 
-Current Patient State
-─────────────────────────────
-Glucose             142 mg/dL
-Heart Rate          84 bpm
-HRV                 42 ms
-Sleep               5.8 hours
-Steps               3,420
-Meal Carbohydrates  65 g
-─────────────────────────────
-              ↓
-       DIGITAL TWIN
-              ↓
-       ML PREDICTION
-              ↓
-       ~2 HOUR FORECAST
+within the prediction pipeline.
 
-The system can expose model outputs through the backend API and visualize them through the clinician dashboard.
+06 — AI / ML Architecture
+07 — Model Strategy
 
-🔍 Explainable AI
+The prototype is designed around a supervised learning pipeline for near-term glucose forecasting.
 
-A predictive healthcare system should provide more than a prediction.
+Model layer
+Scikit-learn
+XGBoost
+LightGBM
+Joblib model persistence
+Explainability layer
+SHAP-based feature attribution
+Transparent fallback when model artifacts are unavailable
+Validation principles
 
-GlycoTwin AI is designed to expose the factors contributing to a prediction.
+To reduce temporal/patient leakage, the intended evaluation strategy uses patient-level separation between training, validation, and test data where applicable.
 
-Example:
+Evaluation
+
+The project is structured to report appropriate regression metrics such as:
+
+MAE
+RMSE
+R²
+
+If a classification formulation is used for spike-risk detection, the evaluation can include:
+
+Precision
+Recall
+F1
+ROC-AUC
+
+Final numerical results should be reported here only after the final trained model and evaluation pipeline have been executed.
+
+08 — Explainable AI
+
+A healthcare prediction should not stop at:
+
+Risk = High
+
+The system is designed to expose which modeled signals contributed to the prediction.
+
+Example explanation interface:
 
 Prediction Drivers
-─────────────────────────────
+────────────────────────────────────
+
 ↑ Recent glucose trend
-↑ Meal carbohydrate intake
+↑ Meal carbohydrate context
 ↓ Recent physical activity
 ↓ Sleep duration
 ↑ Post-meal physiological response
 
-The explainability layer is designed around SHAP-based feature attribution, with a transparent fallback when trained model artifacts are unavailable.
+The explainability layer connects the ML prediction to the Digital Twin state so that the dashboard can show:
 
-🧪 What-If Simulation
-
-The Digital Twin can be used to explore hypothetical scenarios.
-
-Example baseline:
-
-Meal Carbohydrates : 70g
-Additional Steps   : 0
-Sleep Duration     : 5.5h
-
+Patient State
+     ↓
 Prediction
      ↓
-Elevated Risk
+Feature Contribution
+     ↓
+Human-Readable Explanation
+09 — What-If Simulation
+
+The Digital Twin can be modified without changing the original patient record.
 
 Example scenario:
 
-Meal Carbohydrates : -20g
-Additional Steps   : +2,000
-Sleep Duration     : +1h
+BASELINE
+────────────────────────
+Meal carbohydrates : 70 g
+Additional activity: 0
+Sleep duration     : 5.5 h
 
-The system then compares the baseline and simulated states.
+Simulated scenario:
 
-             BASELINE
-                 │
-                 ▼
-          Digital Twin
-                 │
-                 ▼
-            Prediction
-                 │
-        ┌────────┴────────┐
-        │                 │
-        ▼                 ▼
-     Scenario A       Scenario B
-        │                 │
-        ▼                 ▼
-   Prediction        Prediction
-        │                 │
-        └────────┬────────┘
-                 ▼
-          Scenario Delta
+SCENARIO
+────────────────────────
+Meal carbohydrates : 50 g
+Additional activity: +2,000 steps
+Sleep duration     : 6.5 h
 
-This enables an interactive exploration of how changes in simulated inputs affect the model's output.
+The simulation engine creates a modified state:
 
-🩺 Doctor Dashboard
+Baseline Patient
+       ↓
+Current Digital Twin
+       ↓
+Baseline Prediction
 
-The conceptual dashboard is designed around four questions:
+              +
 
-01 — What is happening?
+Scenario Parameters
+       ↓
+Modified Digital Twin
+       ↓
+Scenario Prediction
 
-Current physiological state.
+              ↓
+
+     Comparative Output
+
+The important distinction is that this is a simulation of model behavior, not a clinical treatment recommendation.
+
+10 — Clinician Dashboard
+
+The dashboard is designed around four questions:
+
+01 — What is the patient's current modeled state?
+
+Current glucose, heart rate, HRV, activity, sleep, and relevant clinical context.
 
 02 — What could happen next?
 
-Predicted glucose trajectory.
+Near-term glucose forecast and model output.
 
-03 — Why?
+03 — Why did the model produce this output?
 
-Important model features and prediction drivers.
+Feature contribution and explainability.
 
-04 — What if the scenario changes?
+04 — How does the modeled outcome change under a scenario?
 
 Interactive Digital Twin simulation.
 
-📊 Data Architecture
-Static EHR
-Field	Example
-Patient ID	PT-001
-Age	52
-Sex	Female
-BMI	28.4
-HbA1c	7.2%
-Fasting Glucose	132 mg/dL
-Blood Pressure	138/86
-Diabetes Duration	6 years
-Family History	Yes
-Medication	Simulated
-Dynamic Signals
-Signal	Purpose
-Glucose	Current metabolic state
-Heart Rate	Physiological response
-HRV	Autonomic-state signal
-Steps	Physical activity
-Sleep	Recovery indicator
-Activity	Movement pattern
-Calories	Energy expenditure
-Meal Carbs	Potential glucose driver
-🖥️ Dashboard Preview
+11 — Product Workflow
+┌─────────────────────────────────────────────────────────┐
+│                    CLINICIAN WORKFLOW                   │
+└─────────────────────────────────────────────────────────┘
 
-Add real screenshots/GIFs here once the frontend is running.
+       Select Patient
+             │
+             ▼
+     Review Patient Profile
+             │
+             ▼
+     Inspect Live / Recent Signals
+             │
+             ▼
+       Open Digital Twin
+             │
+             ▼
+      Generate Forecast
+             │
+             ▼
+      Inspect AI Drivers
+             │
+             ▼
+       Run What-If Scenario
+             │
+             ▼
+       Compare Twin States
+12 — Data Strategy & Privacy
 
-Main Dashboard
+The challenge requires teams to use anonymized, open-source, or synthetic datasets because real patient data is restricted by privacy requirements. The challenge specifically identifies sources such as Synthea and MIMIC-IV for EHR-related data and permits simulated/open wearable time-series data.
 
-Digital Twin
+GlycoTwin AI therefore follows a privacy-first prototype approach:
 
-Prediction Analytics
+                 DATA SOURCES
+                      │
+       ┌──────────────┼──────────────┐
+       ▼              ▼              ▼
+   Synthetic       Open Data     Anonymized
+       │              │              │
+       └──────────────┼──────────────┘
+                      ▼
+              MODEL DEVELOPMENT
+                      │
+                      ▼
+              DIGITAL TWIN PoC
 
-What-If Simulation
+No real patient-identifying information is required for the prototype.
 
-🛠️ Technology Stack
-Frontend
-React 19
-TypeScript
-Vite
-Tailwind CSS
-Recharts
-Framer Motion
-Lucide React
-Axios
-Backend
-Python 3.11+
-FastAPI
-Pydantic
-Pandas
-NumPy
-Scikit-learn
-XGBoost
-LightGBM
-SHAP
-Joblib
-Infrastructure
-Docker
-Docker Compose
-GitHub Actions
-REST API
-Synthetic Data Pipeline
-📁 Project Structure
+13 — Technical Stack
+Layer	Technology
+Frontend	React 19, TypeScript, Vite
+UI	Tailwind CSS, Framer Motion, Lucide React
+Visualization	Recharts
+Backend	Python, FastAPI, Pydantic
+Data Processing	Pandas, NumPy
+Machine Learning	Scikit-learn, XGBoost, LightGBM
+Explainability	SHAP
+Model Persistence	Joblib
+API	REST
+Containerization	Docker, Docker Compose
+CI/CD	GitHub Actions
+Data	Synthetic / Anonymized / Open
+14 — System Components
+backend/
+│
+├── API Layer
+│   ├── Patient APIs
+│   ├── Prediction APIs
+│   ├── Simulation APIs
+│   ├── Dashboard APIs
+│   └── Health API
+│
+├── Digital Twin Layer
+│   └── Patient state construction
+│
+├── ML Layer
+│   ├── Feature engineering
+│   ├── Prediction
+│   └── Model artifacts
+│
+├── Explainability Layer
+│   └── SHAP / fallback explanations
+│
+└── Simulation Layer
+    └── What-if scenarios
+frontend/
+│
+├── Dashboard
+├── Patients
+├── Digital Twin
+├── Predictions
+├── Simulation
+├── API Services
+├── Shared Components
+└── Type Definitions
+15 — API Surface
+Method	Endpoint	Description
+GET	/api/health	Backend health
+GET	/api/patients	Retrieve patient list
+GET	/api/patients/{id}	Retrieve patient profile
+GET	/api/patients/{id}/timeline	Retrieve time-series history
+GET	/api/patients/{id}/twin	Retrieve Digital Twin state
+GET	/api/patients/{id}/prediction	Generate/retrieve prediction
+GET	/api/patients/{id}/explanation	Retrieve prediction explanation
+POST	/api/simulation	Run what-if scenario
+GET	/api/dashboard/summary	Dashboard-level summary
+16 — Repository Structure
 glycotwin-ai/
 │
 ├── backend/
 │   ├── app/
 │   │   ├── api/
-│   │   │   ├── patients.py
-│   │   │   ├── predictions.py
-│   │   │   ├── simulation.py
-│   │   │   ├── dashboard.py
-│   │   │   └── health.py
-│   │   │
 │   │   ├── core/
 │   │   ├── models/
 │   │   ├── services/
-│   │   │   ├── digital_twin.py
-│   │   │   ├── prediction.py
-│   │   │   ├── feature_engineering.py
-│   │   │   ├── explainability.py
-│   │   │   └── simulation.py
 │   │   └── utils/
 │   │
 │   ├── data/
@@ -371,14 +471,13 @@ glycotwin-ai/
 │   └── requirements.txt
 │
 ├── frontend/
+│   ├── public/
 │   ├── src/
 │   │   ├── components/
+│   │   ├── hooks/
 │   │   ├── pages/
 │   │   ├── services/
-│   │   ├── hooks/
 │   │   └── types/
-│   │
-│   ├── public/
 │   └── package.json
 │
 ├── docs/
@@ -391,19 +490,57 @@ glycotwin-ai/
 │
 ├── docker-compose.yml
 ├── LICENSE
+├── .gitignore
 └── README.md
-🔌 API
-Endpoint	Purpose
-GET /api/health	Backend health
-GET /api/patients	Patient list
-GET /api/patients/{patient_id}	Patient profile
-GET /api/patients/{patient_id}/timeline	Time-series data
-GET /api/patients/{patient_id}/twin	Digital Twin state
-GET /api/patients/{patient_id}/prediction	Prediction
-GET /api/patients/{patient_id}/explanation	Explainability
-POST /api/simulation	What-if simulation
-GET /api/dashboard/summary	Dashboard summary
-🚀 Getting Started
+17 — Demo
+🎥 Prototype Demonstration
+
+2–5 minute demonstration video required for the challenge submission.
+
+▶️ Watch the Demo
+
+[ADD YOUR YOUTUBE / VIDEO LINK HERE]
+
+Recommended demonstration sequence:
+
+00:00  Problem & use case
+00:20  Patient selection
+00:35  EHR + historical context
+00:55  Dynamic wearable signals
+01:15  Digital Twin state
+01:40  Glucose prediction
+02:05  Explainable AI
+02:30  What-if simulation
+03:00  Architecture & technology
+03:30  Healthcare impact
+18 — Application Screenshots
+
+Replace these placeholders with screenshots from the actual running application.
+
+Dashboard	Digital Twin
+docs/assets/dashboard.png	docs/assets/digital-twin.png
+Prediction	Simulation
+docs/assets/prediction.png	docs/assets/simulation.png
+19 — Architecture Documentation
+📐 Architecture PDF
+
+View Architecture Document
+
+The architecture document covers:
+
+Data sources
+Data fusion
+Feature engineering
+Digital Twin state
+ML pipeline
+Explainability
+Simulation
+Frontend/backend architecture
+📑 Presentation
+
+View Project Presentation
+
+20 — Quick Start
 Prerequisites
 Python 3.11+
 Node.js 20+
@@ -433,7 +570,7 @@ API documentation:
 http://localhost:8000/docs
 Frontend
 
-Open another terminal:
+Open a second terminal:
 
 cd frontend
 
@@ -444,139 +581,180 @@ npm run dev
 Frontend:
 
 http://localhost:5173
-🐳 Docker
-
-Run the complete application:
-
+Docker
 docker compose up --build
 
 Stop:
 
 docker compose down
-🎬 Recommended Demo Flow
-01 → Select Patient
+21 — Reproducibility
+
+A reviewer should be able to understand the complete path from data to prediction:
+
+Synthetic / Open Data
         ↓
-02 → View Synthetic EHR
+Data Generation / Loading
         ↓
-03 → Observe Wearable Stream
+Preprocessing
         ↓
-04 → Open Digital Twin
+Feature Engineering
         ↓
-05 → Generate Glucose Forecast
+Train / Validation / Test
         ↓
-06 → Inspect AI Explanation
+Model Training
         ↓
-07 → Modify Scenario
+Model Evaluation
         ↓
-08 → Run What-If Simulation
+Model Artifact
         ↓
-09 → Compare Results
-🏆 Digital Twin Challenge 2026 Alignment
-Challenge Requirement	GlycoTwin AI
-Static EHR Data	✅
-Demographics	✅
-Diagnoses	✅
-Laboratory Measurements	✅
-Dynamic Wearable Data	✅
-IoT Time-Series	✅
-Algorithmic Model	✅
-Localized Health Event	✅
-Digital Twin	✅
-Explainable AI	✅
-Doctor Dashboard	✅
-What-If Simulation	✅
-Synthetic / Anonymized Data	✅
-🔐 Privacy & Data Ethics
+FastAPI Prediction Service
+        ↓
+React Dashboard
 
-GlycoTwin AI is designed as a research and hackathon prototype.
+The repository is structured so that the ML, backend, and frontend layers can be developed and evaluated independently.
 
-The prototype should use:
+22 — Challenge Requirement Mapping
 
-Synthetic data
-Anonymized data
-Open datasets where appropriate
+The official challenge requires the prototype to demonstrate the fusion of static/historical EHR data and dynamic/real-time wearable or IoT time-series data, produce an algorithmic prediction of a localized adverse health event, and present a conceptual doctor-facing dashboard.
 
-No real patient-identifying information should be included in this repository.
+Challenge Requirement	GlycoTwin AI Implementation
+Static / historical data	Synthetic EHR
+Demographics	Patient profile
+Historical clinical data	Diagnosis, labs, history
+Dynamic data	Wearable / IoT time series
+HRV	Dynamic sensor feature
+Glucose	Dynamic metabolic signal
+Sleep	Dynamic recovery signal
+Steps	Dynamic activity signal
+Localized outcome	Near-term glucose spike forecasting
+Algorithmic model	ML prediction pipeline
+Digital Twin	Patient-state engine
+Explainability	SHAP-based attribution
+Doctor dashboard	React healthcare dashboard
+Scenario simulation	What-if Digital Twin engine
+Privacy	Synthetic / anonymized / open data
+23 — Expected Prototype Outcome
 
-⚠️ Medical Disclaimer
+The completed prototype demonstrates a complete technical path:
 
-GlycoTwin AI is a research prototype created for the Digital Twin Challenge 2026. It is not a medical device and does not provide medical diagnosis or treatment. Predictions are model outputs and should not be used as a substitute for professional clinical judgment.
+                 PATIENT
+                    │
+                    ▼
+          ┌───────────────────┐
+          │ Static EHR        │
+          │ +                 │
+          │ Dynamic Wearables │
+          └─────────┬─────────┘
+                    │
+                    ▼
+             DATA FUSION
+                    │
+                    ▼
+           DIGITAL TWIN STATE
+                    │
+             ┌──────┼──────┐
+             ▼      ▼      ▼
+          PREDICT EXPLAIN SIMULATE
+             │      │      │
+             └──────┼──────┘
+                    ▼
+          CLINICIAN DASHBOARD
 
-🌱 Future Roadmap
-                    GlycoTwin AI
-                         │
-                         ▼
-              Current Prototype
-                         │
-        ┌────────────────┼────────────────┐
-        ▼                ▼                ▼
-   Wearables        Explainability    Simulation
-        │
-        ▼
-       FUTURE
-        │
-        ├── Real wearable integrations
-        ├── Continuous glucose monitoring
-        ├── Personalized model adaptation
-        ├── Multimodal health signals
-        ├── Longitudinal patient modeling
-        ├── Temporal Transformer models
-        ├── Uncertainty-aware prediction
-        ├── Federated learning
-        ├── Privacy-preserving AI
-        └── Clinical workflow integration
-📚 References
-Happiest Health — Digital Twin Challenge 2026
-Synthea — Synthetic Patient Data
-MIMIC-IV — PhysioNet
-FastAPI Documentation
-React Documentation
-Scikit-learn Documentation
-SHAP Documentation
+The intended result is not merely a prediction model.
 
-Add the exact source URLs and access dates used in the final implementation and submission.
+It is a working Digital Twin workflow connecting patient state, forecasting, explainability, and simulation in one system.
 
-👥 Team
+24 — Responsible AI & Medical Safety
+
+GlycoTwin AI is a research and hackathon proof-of-concept.
+
+It is not a medical device.
+
+It does not provide diagnosis, treatment, or individualized medical advice.
+
+Model outputs are predictions generated from simulated/open/anonymized data and should not be interpreted as clinical recommendations.
+
+Any future clinical deployment would require appropriate:
+
+Clinical validation
+External validation
+Safety evaluation
+Bias assessment
+Data governance
+Privacy controls
+Regulatory review
+Human oversight
+25 — Limitations
+
+The current prototype has several deliberate limitations:
+
+The primary data environment is synthetic, anonymized, or open rather than real-time clinical infrastructure.
+Wearable signals are simulated/open-source rather than connected to production medical devices.
+The glucose forecasting problem represents a focused Digital Twin use case rather than a complete physiological replica.
+Model performance depends on the quality and representativeness of the underlying dataset.
+What-if simulation represents model-based scenario analysis and is not a clinical intervention simulator.
+
+These limitations define the boundary between the current proof-of-concept and future clinical research.
+
+26 — Future Development
+CURRENT PoC
+     │
+     ├── EHR + Wearable Fusion
+     ├── Digital Twin State
+     ├── Glucose Forecasting
+     ├── Explainable AI
+     └── What-If Simulation
+              │
+              ▼
+NEXT STAGE
+     │
+     ├── Real wearable integrations
+     ├── Continuous glucose monitoring
+     ├── Personalized model adaptation
+     ├── Longer longitudinal histories
+     ├── Uncertainty-aware prediction
+     └── Improved temporal models
+              │
+              ▼
+RESEARCH DIRECTION
+     │
+     ├── Multimodal physiological modeling
+     ├── Temporal Transformers
+     ├── Federated learning
+     ├── Privacy-preserving learning
+     ├── Causal inference
+     └── Clinical validation
+27 — Team
 Hacknetic Force
 
-Project: GlycoTwin AI
-Challenge: Digital Twin Challenge 2026
 Institution: CMR Institute of Technology, Bengaluru
+Challenge: Digital Twin Challenge 2026
+Project: GlycoTwin AI
 
-Member	Contribution
-Shivam Raj	AI/ML • Full-Stack Development • Digital Twin Architecture
-Team Member	—
-Team Member	—
-Team Member	—
-📄 Deliverables
-📦 GlycoTwin AI
-│
-├── 💻 Source Code
-│   ├── Frontend
-│   ├── Backend
-│   ├── ML Pipeline
-│   └── Data Generation
-│
-├── 📚 Documentation
-│   ├── Architecture
-│   ├── Presentation
-│   ├── Demo Script
-│   └── References
-│
-└── 🚀 Deployment
-    ├── Docker
-    └── CI/CD
-<div align="center">
-🧬 GlycoTwin AI
-Data → Digital Twin → Prediction → Explanation → Simulation
-<br/>
+Member	Responsibility
+Shivam Raj	Digital Twin Architecture · AI/ML · Full-Stack Development
+28 — Open Source
 
-Built for Digital Twin Challenge 2026
+This project is released under the MIT License.
 
-<br/>
+See LICENSE for details.
 
-⭐ Star the repository if you find the project interesting
+29 — References
+Challenge
+Happiest Health — Digital Twin Challenge 2026
+Unstop — Digital Twin Challenge 2026
+Data / Healthcare
+Synthea — Synthetic Patient Data
+MIMIC-IV — PhysioNet
+Engineering
+FastAPI
+React
+Scikit-learn
+XGBoost
+LightGBM
+SHAP
 
-<br/>
-
-</div> ```
+Exact dataset versions, source URLs, and access dates should be added when they are used in the final implementation.
+GlycoTwin AI
+Observe → Model → Predict → Explain → Simulate
+A focused Digital Twin proof-of-concept for proactive healthcare intelligence.
